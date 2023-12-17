@@ -106,48 +106,6 @@ chisq <- sum(((c(202, 296, 84) - (c(p_2,pq_2,q_2)*582))^2) / (c(p_2,pq_2,q_2)*58
 chisq
 
 #_______________________________________________________________________________
-#Testing both variants for possible difference in genotype frequency between populations
-
-#Chisq test for conforming manual testing 
-chisq.test(table(dane$Group,dane$VDR_FokI))
-chisq.test(table(dane$Group,dane$BSM))
-
-manual_chi_square_test <- function(observed) {
-  #Sum of columns and rows
-  row_totals <- rowSums(observed)
-  col_totals <- colSums(observed)
-  
-  #Sum of all
-  total_obs <- sum(row_totals)
-  
-  #Expected frequencies
-  expected <- outer(row_totals, col_totals) / total_obs
-  
-  #Chisqu value
-  chi_square_stat <- sum((observed - expected)^2 / expected)
-  
-  #Degrees of freedom
-  df <- prod(dim(observed) - 1)
-  
-  #P-value
-  p_value <- 1 - pchisq(chi_square_stat, df)
-  
-  #Results
-  result <- list(
-    observed = observed,
-    expected = expected,
-    chi_square_stat = chi_square_stat,
-    df = df,
-    p_value = p_value
-  )
-  print(result)
-}
-
-#Testing
-manual_chi_square_test(table(dane$Group,dane$VDR_FokI))
-manual_chi_square_test(table(dane$Group,dane$BSM))
-
-#_______________________________________________________________________________
 #Calculating odds ratios for SNP
 #FokI
 table(dane$Group,dane$VDR_FokI)
