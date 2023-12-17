@@ -1,4 +1,4 @@
-VDR
+## VDR
 VDR (Vitamin D Receptor) is a protein present in cells that functions as a transcription factor when activated by vitamin D. The main role of VDR is to regulate gene expression, influencing how genetic information is read and utilized by the cell. Numerous scientific studies focus on the role of VDR in various diseases, including cancer. VDR also plays a role in the proper growth and differentiation of breast tissue cells. Abnormalities resulting from polymorphisms (FokI, BSM) can lead to the transformation of normally functioning cells into cancer cells.
 
 Materials and Methods
